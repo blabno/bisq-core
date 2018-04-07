@@ -68,7 +68,7 @@ public class SetupUtils {
                         log.debug("Crypto test succeeded");
 
                         if (Security.getProvider("BC") != null) {
-                            UserThread.execute(resultHandler::handleResult);
+                            resultHandler.handleResult();
                         } else {
                             errorHandler.accept(new CryptoException("Security provider BountyCastle is not available."));
                         }
